@@ -137,3 +137,12 @@ tap.equal(validate.isDateOnly('2000/02/02'), true);
 tap.equal(validate.isDateOnly('2100/02/02'), false);
 tap.equal(validate.isDateOnly('2000/13/02'), false);
 tap.equal(validate.isDateOnly('2000/02/33'), false);
+
+tap.equal(validate.isEmptyObject(), true);
+tap.equal(validate.isEmptyObject(null), true);
+tap.equal(validate.isEmptyObject([]), true);
+tap.equal(validate.isEmptyObject({}), true);
+tap.equal(validate.isEmptyObject([1,2,3]), false);
+tap.equal(validate.isEmptyObject({a:1}), false);
+tap.equal(validate.isEmptyObject(1), true);
+tap.equal(validate.isEmptyObject('test'), true);

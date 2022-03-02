@@ -1,6 +1,6 @@
 {
   "name": "parameter-type",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Check parameter type",
   "main": "lib/index.js",
   "module": "es5/index.js",
