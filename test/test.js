@@ -54,6 +54,7 @@ tap.equal(validate.isString('1'), true);
 tap.equal(validate.isString(1), false);
 tap.equal(validate.isString(false), false);
 tap.equal(validate.isString(undefined), false);
+tap.equal(validate.isString(''), true);
 
 tap.equal(validate.isBoolean(false), true);
 tap.equal(validate.isBoolean(1), false);
@@ -146,3 +147,13 @@ tap.equal(validate.isEmptyObject([1,2,3]), false);
 tap.equal(validate.isEmptyObject({a:1}), false);
 tap.equal(validate.isEmptyObject(1), true);
 tap.equal(validate.isEmptyObject('test'), true);
+
+tap.equal(validate.isHexColor('#F01'), true);
+tap.equal(validate.isHexColor('#000000'), true);
+tap.equal(validate.isHexColor('#XXX'), false);
+tap.equal(validate.isHexColor('xxx'), false);
+tap.equal(validate.isHexColor(''), false);
+tap.equal(validate.isHexColor('#000x00'), false);
+tap.equal(validate.isHexColor('#000F0000'), false);
+tap.equal(validate.isHexColor('#F011'), false);
+tap.equal(validate.isHexColor('#F0X'), false);
